@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+    // Regular
+      console.log('good');
+    // Interpolated
+      console.log('this is the 9th day %s string!', 'and i delayed for a long time %s string!');
+    // Styled
+      console.log('%c testing', 'font-size: 40px; background: yellow;')
+    // warning!
+      console.warn('hey!');
+    // Error :|
+      console.error('dundun');
+    // Info
+      console.info('i am going to the UK');
+    // Testing
+      const a = document.querySelector('p');
+      console.assert(p.classList.contains('ouch'), 'you are wrong!');
+    // clearing
+      console.clear();
+    // Viewing DOM Elements
+      console.log(p);
+      console.dir();
+    // Grouping together
+      dogs.forEach(dog => {
+          console.log( `I am ${dog.name}`);
+          console.log(`${dog.name} is ${dog.age *7}`);
+          console.groupEnd(`${dog.name}`);
+      })
+    // counting
+      console.count('wes');
+    // timing
+      console.time('mining data')
+      fetch()
+        .then(data => data.json())
+        .then (data => {
+          console.timeEnd('mining data');
+          console.log(data);
+      });
+  </script>
+</body>
+</html>
